@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../CSS/student.css" />
+
+    <title>MankaiHub</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand" id="brandLink">
+        <img src="../img/logoandtextlogo.svg" alt="logo">
+      </a>
+
+      <ul class="side-menu top">
+        <li >
+          <a id="dashboardLink" >
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="topicLink" class="active">
+            <i class="bx bxs-shopping-bag-alt"></i>
+            <span class="text">Topic</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="messageLink">
+            <i class="bx bxs-message-dots"></i>
+            <span class="text">Courses</span>
+          </a>
+        </li>
+        <li class="active">
+          <a id="studentLink" >
+            <i class="bx bxs-group"></i>
+            <span class="text">Student</span>
+          </a>
+        </li>
+        <li >
+          <a id="addExamLink" >
+            <i class="bx bxs-graduation"></i>
+
+            <span class="text">Exam</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" id="settingsLink" >
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="logoutLink" >
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <div class="logo-admin">
+            <input type="checkbox" id="switch-mode" hidden />
+            <label for="switch-mode" class="switch-mode"></label>
+            <a href="#" class="notification">
+              <i class="bx bxs-bell"></i>
+              <span class="num">8</span>
+            </a>
+            <a href="#" class="profile">
+              <img src="../img/quanmario.png" />
+            </a>
+        </div>
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Student</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Student</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div class="change-word">
+            <a id="addStudent" class="btn-new">
+                <i class="bx bxs-plus-square"></i>
+                <span class="status.adding">Add New</span>
+            </a>
+          </div>
+        </div>
+        <form action="#">
+            <div class="form-input">
+              <input id="searchUser" type="search" placeholder="Search..." />
+              <button type="submit" class="search-btn">
+                <i class="bx bx-search"></i>
+              </button>
+            </div>
+          </form>
+<!-- Main Content -->
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Student</h3>
+              <i class="bx bx-search"></i>
+              <i class="bx bx-filter"></i>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th class="BoxActiveTd" >Status
+
+
+
+                  </th>
+                  <th>ID</th>
+                  <th>Birth</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="containerAccountUser">
+              <!-- Main Content -->
+
+              </tbody>
+
+            </table>
+            <div class="pagination" id="pagination">
+
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+      </main>
+<!--      <div class="pagination">-->
+<!--        <div class="pagination-controls">-->
+<!--          <button class="pagination-btn">Previous</button>-->
+<!--          <button class="pagination-btn active">1</button>-->
+<!--          <button class="pagination-btn">2</button>-->
+<!--          <button class="pagination-btn">3</button>-->
+<!--          <button class="pagination-btn">Next</button>-->
+<!--        </div>-->
+<!--      </div>-->
+      <!-- MAIN -->
+    </section>
+
+
+
+    <!-- MODAL add Students -->
+    <div id="overlay" class="overlay"></div>
+
+    <div id="studentAccountModal" class="popUp1">
+      <div class="popUp-header">
+        <h2 id="studentModalTitle">Tạo tài khoản học sinh</h2>
+        <button id="closeStudentModal" class="close-btn">&times;</button>
+      </div>
+
+      <div class="form-group">
+        <label for="studentEmail">Email <span class="required">*</span></label>
+        <input type="email" id="studentEmail" placeholder="Nhập địa chỉ email...">
+        <small id="emailHelpText">Email sẽ được sử dụng để đăng nhập và khôi phục mật khẩu</small>
+      </div>
+
+      <div class="form-group">
+        <label for="studentPassword">Mật khẩu <span class="required">*</span></label>
+        <input type="password" id="studentPassword" placeholder="Nhập mật khẩu...">
+        <small>Mật khẩu phải có ít nhất 8 ký tự</small>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Xác nhận mật khẩu <span class="required">*</span></label>
+        <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu...">
+      </div>
+
+      <div class="form-group">
+        <label for="fullName">Họ và tên <span class="required">*</span></label>
+        <input type="text" id="fullName" placeholder="Nhập họ và tên...">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Giới tính <span class="required">*</span></label>
+        <select id="gender">
+          <option value="">Chọn giới tính...</option>
+          <option value="male">Nam</option>
+          <option value="female">Nữ</option>
+          <option value="other">Khác</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="birthDate">Ngày tháng năm sinh <span class="required">*</span></label>
+        <input type="date" id="birthDate">
+      </div>
+
+      <div class="form-group">
+        <label for="hometown">Quê quán <span class="required">*</span></label>
+        <input type="text" id="hometown" placeholder="Nhập quê quán...">
+      </div>
+
+      <div class="form-group">
+        <label for="classStudent">Lớp</label>
+        <input type="text" id="classStudent" placeholder="Nhập lớp...">
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Số điện thoại</label>
+        <input type="tel" id="phoneNumber" placeholder="Nhập số điện thoại...">
+      </div>
+
+      <div class="form-group">
+        <label for="point">Điểm KN <span class="required">*</span></label>
+        <input type="number" id="point" min="0" placeholder="point...">
+      </div>
+
+
+
+
+      <div class="button-group">
+        <div class="right-buttons">
+          <button id="cancelStudentBtn" class="secondary-btn">Hủy bỏ</button>
+          <button id="createStudentBtn" class="primary-btn">Tạo tài khoản</button>
+          <button id="editBtn" class="primary-btn">Lưu Thay đổi</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+      <div class="user-modal-content" id="userModalContent">
+        <!-- Header của modal -->
+        <div class="user-modal-header">
+          <h3 class="user-modal-title">
+            <i class='bx bx-user-check'></i>
+            Edit Account Status
+          </h3>
+          <button class="user-modal-close" id="user-modal-close">&times;</button>
+        </div>
+
+        <!-- Body của modal -->
+        <div class="user-modal-body">
+          <!-- Thông tin người dùng -->
+          <div class="user-info">
+            <div class="user-avatar">
+              <img id="avatarStatus" src="" alt="Avatar" />
+            </div>
+            <div class="user-details">
+              <div class="user-name" id="nameStatus">Nguyễn Văn A</div>
+              <div class="user-email" id="emailStatus">nguyenvana@gmail.com</div>
+              <div class="user-current-status status-active" id="status">Active</div>
+            </div>
+          </div>
+
+          <!-- Tùy chọn trạng thái -->
+          <div class="form-group">
+            <label class="form-label">Edit Account Status</label>
+            <div class="status-options">
+              <div class="status-option " data-value="active">
+                <div class="status-icon status-active-icon">
+                  <i class='bx bxs-check-circle'></i>
+                </div>
+                <div class="status-text">Active</div>
+              </div>
+
+              <div class="status-option" data-value="pending">
+                <div class="status-icon status-pending-icon">
+                  <i class='bx bxs-time'></i>
+                </div>
+                <div class="status-text">Waiting for confirmation</div>
+              </div>
+              <div class="status-option" data-value="inactive">
+                <div class="status-icon status-inactive-icon">
+                  <i class='bx bxs-x-circle'></i>
+                </div>
+                <div class="status-text">Suspended</div>
+              </div>
+              <div class="status-option" data-value="blocked">
+                <div class="status-icon status-blocked-icon">
+                  <i class='bx bxs-lock'></i>
+                </div>
+                <div class="status-text">Lock account</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ghi chú -->
+        </div>
+
+        <!-- Footer của modal -->
+        <div class="user-modal-footer">
+          <button class="user-btn user-btn-cancel" id="user-btn-cancel">
+            <i class='bx bx-x'></i>
+            cancel
+          </button>
+          <button class="user-btn user-btn-save" id="userBtnSave">
+            <i class='bx bx-save'></i>
+           Save
+          </button>
+        </div>
+      </div>
+    <!-- CONTENT -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+    <script  src="../JSAdmin/fireBaseData.js"></script>
+    <script type="module" src="../JSAdmin/student.js" ></script>
+    <script src="../JSAdmin/changPage.js"></script>
+
+  </body>
+</html>

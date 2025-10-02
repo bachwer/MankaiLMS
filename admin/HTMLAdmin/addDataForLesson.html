@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
+  <!-- My CSS -->
+  <link rel="stylesheet" href="../CSS/topic.css" />
+  <link rel="stylesheet" href="../CSS/Courses.css" />
+  <link rel="stylesheet" href="../CSS/addDataForLesson.css"/>
+
+  <!-- Thêm vào head của file HTML -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+
+  <title>MankaiHub</title>
+</head>
+<body>
+<!-- SIDEBAR -->
+<section id="sidebar">
+  <a href="#" class="brand" id="brandLink">
+    <img src="../img/logoandtextlogo.svg" alt="logo">
+  </a>
+
+  <ul class="side-menu top">
+    <li >
+      <a id="dashboardLink" >
+        <i class="bx bxs-dashboard"></i>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li >
+      <a href="#" id="topicLink" class="active">
+        <i class="bx bxs-shopping-bag-alt"></i>
+        <span class="text">Topic + word</span>
+      </a>
+    </li>
+    <li class="active">
+      <a href="#" id="messageLink">
+        <i class="bx bxs-message-dots"></i>
+        <span class="text">Lesson</span>
+      </a>
+    </li>
+    <li >
+      <a id="studentLink" >
+        <i class="bx bxs-group"></i>
+        <span class="text">Student</span>
+      </a>
+    </li>
+    <li >
+      <a id="addExamLink" >
+        <i class="bx bxs-graduation"></i>
+        <span class="text">Exam</span>
+      </a>
+    </li>
+
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a href="#" id="settingsLink" >
+        <i class="bx bxs-cog"></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" id="logoutLink" >
+        <i class="bx bxs-log-out-circle"></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+
+  </ul>
+</section>
+
+<!-- SIDEBAR -->
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i class="bx bx-menu"></i>
+    <div class="logo-admin">
+      <input type="checkbox" id="switch-mode" hidden />
+      <label for="switch-mode" class="switch-mode"></label>
+      <a href="#" class="notification">
+        <i class="bx bxs-bell"></i>
+        <span class="num">8</span>
+      </a>
+      <a href="#" class="profile">
+        <img src="../img/quanmario.png" />
+      </a>
+    </div>
+
+  </nav>
+  <!-- NAVBAR -->
+
+  <!-- MAIN -->
+
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Lesson</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Lesson</a>
+          </li>
+          <li><i class="bx bx-chevron-right"></i></li>
+          <li>
+            <a class="active" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+      <div class="change-word">
+        <a id="btnDel" class="btn-del">
+          <i class="bx bx bxs-trash"></i>
+          <span class="status.adding">Delete</span>
+        </a>
+      </div>
+
+    </div>
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search..." />
+        <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </form>
+    <!-- Main Content -->
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Lesson</h3>
+          <i class="bx bx-search"></i>
+          <i class="bx bx-filter"></i>
+        </div>
+        <section  class="content">
+
+
+          <div class="header-card" id="addVideo">
+            <div class="icon-card">
+              <div class="grid-lines-card"></div>
+              <div class="icon-content-card">
+                <img  src="../img/play-circle.svg" alt="Frame" />
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="title-section">
+                <div class="label">add some video</div>
+                <div class="title">Add New Video Content</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="header-card" id="addBook">
+            <div class="icon-card">
+              <div class="grid-lines-card"></div>
+              <div class="icon-content-card">
+                <img  src="../img/book.svg" alt="Frame" />
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="title-section">
+                <div class="label">add some document</div>
+                <div class="title">Add New document</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="header-card" id="flashCard" >
+            <div class="icon-card">
+              <div class="grid-lines-card"></div>
+              <div class="icon-content-card">
+                <img  src="../img/flashCard.svg" alt="Frame" />
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="title-section">
+                <div class="label">add some flashCard</div>
+                <div class="title">Add New flashCard</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="header-card" id="addTest">
+            <div class="icon-card">
+              <div class="grid-lines-card"></div>
+              <div class="icon-content-card">
+                <img  src="../img/task-square.svg" alt="Frame" />
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="title-section">
+                <div class="label">add some Test</div>
+                <div class="title">Add New test</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="header-card" id="PDF">
+            <div class="icon-card">
+              <div class="grid-lines-card"></div>
+              <div class="icon-content-card">
+                <img  src="../img/iconPDF.svg" alt="Frame" />
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="title-section">
+                <div class="label">add some iconPDF</div>
+                <div class="title">Add New iconPDF</div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="header-card" id="addAudio">
+            <div class="icon-card">
+              <div class="grid-lines-card"></div>
+              <div class="icon-content-card">
+                <img  src="../img/headphone.svg" alt="Frame" />
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="title-section">
+                <div class="label">add some audio</div>
+                <div class="title">Add New audio</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      <!--   ALL MODEL -->
+        <!-- Modal Overlay -->
+        <div class="overlay" id="overlay"> </div>
+
+          <div class="modal" id="modelVideo">
+            <div class="modal-header">
+              <h3 class="modal-title">Add Video by URL</h3>
+              <button class="close-button" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form id="addVideoForm">
+                <div class="form-group">
+                  <label for="videoUrl" class="form-label">Video URL</label>
+                  <input type="url" id="videoUrl" class="form-input1" placeholder="https://example.com/video" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="videoTitle" class="form-label">Video Title</label>
+                  <input type="text" id="videoTitle" class="form-input1" placeholder="Enter video title" required>
+                </div>
+
+                <div class="form-group">
+                  <div class="lesson-toolbar">
+                    <button type="button" class="lesson-tool-btn" data-command="bold">In đậm</button>
+                    <button type="button" class="lesson-tool-btn" data-command="italic">In nghiêng</button>
+                    <button type="button" class="lesson-tool-btn" data-command="underline">Gạch chân</button>
+                    <button type="button" class="lesson-tool-btn" data-command="formatBlock" data-value="h2">Tiêu đề</button>
+                    <button type="button" class="lesson-tool-btn" data-command="justifyLeft">Căn trái</button>
+                    <button type="button" class="lesson-tool-btn" data-command="justifyCenter">Căn giữa</button>
+                    <button type="button" class="lesson-tool-btn" data-command="justifyRight">Căn phải</button>
+                    <button type="button" class="lesson-tool-btn" data-command="undo"><- Undo</button>
+                    <button type="button" class="lesson-tool-btn" data-command="redo">-> Redo</button>
+                  </div>
+
+                  <div id="videoDescription" class="lesson-textarea" contenteditable="true">
+
+                  </div>
+
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-cancel" id="cancelBtn">Cancel</button>
+<!--              <button class="btn btn-primary" id="checkUrlBtn">Preview</button>-->
+              <button class="btn btn-primary" id="addVideoBtn">Add Video</button>
+            </div>
+          </div>
+        <!-- book -->
+
+        <div class="lesson-modal" id="modelDocument">
+          <div class="lesson-header">
+            <h2 class="lesson-title">Nhập Document Bài Học HTML</h2>
+            <button class="lesson-close" id="closeLessonModal">&times;</button>
+          </div>
+
+          <div class="lesson-body">
+            <form class="lesson-form" id="lessonForm">
+              <!-- Lesson Title Section -->
+              <div class="lesson-section">
+                <h3 class="lesson-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                  Tên Bài Học
+                </h3>
+                <div class="lesson-group">
+                  <label for="lessonName" class="lesson-label">Tiêu đề bài học</label>
+                  <input type="text" id="lessonName" class="lesson-input" placeholder="Nhập tên bài học">
+                </div>
+              </div>
+
+              <!-- Course Objectives Section -->
+              <div class="lesson-section">
+                <h3 class="lesson-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20V10"></path>
+                    <path d="M18 20V4"></path>
+                    <path d="M6 20v-6"></path>
+                  </svg>
+                  1. Mục Tiêu
+                </h3>
+                <div class="lesson-bullet-list" id="objectivesList">
+                  <div class="lesson-bullet-item">
+                    <span class="lesson-bullet"></span>
+                    <input id="targetLesson" type="text" class="lesson-bullet-input" placeholder="Nhập mục tiêu" >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description Section -->
+              <div class="lesson-section">
+                <h3 class="lesson-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                  2. Mô Tả
+                </h3>
+                <div class="lesson-bullet-list" id="descriptionList">
+                  <div class="lesson-bullet-item">
+                    <span class="lesson-bullet"></span>
+                    <input id="descriptionLesson" type="text" class="lesson-bullet-input" placeholder="Nhập mô tả" value="Thực hiện tạo trang web có nội dung như sau:">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Editor Section -->
+              <div class="lesson-section">
+                <h3 class="lesson-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  Nội Dung Chi Tiết
+                </h3>
+                  <div class="lesson-toolbar">
+                    <button type="button" class="lesson-tool-btn" data-command="bold">In đậm</button>
+                    <button type="button" class="lesson-tool-btn" data-command="italic">In nghiêng</button>
+                    <button type="button" class="lesson-tool-btn" data-command="underline">Gạch chân</button>
+                    <button type="button" class="lesson-tool-btn" data-command="formatBlock" data-value="h2">Tiêu đề</button>
+                    <button type="button" class="lesson-tool-btn" data-command="justifyLeft">Căn trái</button>
+                    <button type="button" class="lesson-tool-btn" data-command="justifyCenter">Căn giữa</button>
+                    <button type="button" class="lesson-tool-btn" data-command="justifyRight">Căn phải</button>
+                    <button type="button" class="lesson-tool-btn" data-command="undo"><- Undo</button>
+                    <button type="button" class="lesson-tool-btn" data-command="redo">-> Redo</button>
+                  </div>
+
+                <div id="lessonContent" class="lesson-textarea" contenteditable="true">
+
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+          <div class="lesson-footer">
+            <button class="lesson-cancel" id="cancelLessonBtn">Huỷ</button>
+            <button class="lesson-save" id="saveLessonBtn">Lưu Bài Học</button>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="question-popup" id="questionPopup">
+          <div class="question-popup-header">
+            <div class="question-popup-title">Chọn dạng câu hỏi</div>
+            <button id="closePopupBtn" class="question-popup-close">&times;</button>
+          </div>
+          <div class="question-popup-content">
+            <p class="question-popup-description">Hãy chọn một trong các dạng câu hỏi dưới đây:</p>
+
+            <div class="question-type-list">
+              <!-- Dạng 1: Multiple Choice -->
+              <div id="testType1" class="question-type-item question-type-multiple-choice" data-type="multiple-choice">
+                <div class="question-type-icon">
+                  <div class="question-type-icon-circle">A</div>
+                </div>
+                <div class="question-type-content">
+                  <div class="question-type-title">Trắc nghiệm</div>
+                  <div class="question-type-description">Câu hỏi có nhiều lựa chọn, chỉ một đáp án đúng</div>
+                </div>
+              </div>
+
+              <!-- Dạng 2: True/False -->
+              <div  id="testType2" class="question-type-item question-type-true-false" data-type="true-false">
+                <div class="question-type-icon">
+                  <div class="question-type-icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="question-type-content">
+                  <div class="question-type-title">Bài Nghe / Đọc</div>
+                  <div class="question-type-description">Câu hỏi chỉ có hai lựa chọn: Đúng hoặc Sai</div>
+                </div>
+              </div>
+
+              <!-- Dạng 3: Short Answer -->
+              <div  id="testType3" class="question-type-item question-type-short-answer" data-type="short-answer">
+                <div class="question-type-icon">
+                  <div class="question-type-icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="question-type-content">
+                  <div class="question-type-title">Chọn Từ Đúng</div>
+                  <div class="question-type-description">Câu hỏi yêu cầu người dùng nhập câu trả lời ngắn</div>
+                </div>
+              </div>
+
+              <!-- Dạng 4: Matching -->
+              <div id="testType4" class="question-type-item question-type-matching" data-type="matching">
+                <div class="question-type-icon">
+                  <div class="question-type-icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm7 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="question-type-content">
+                  <div class="question-type-title">Ghép Câu</div>
+                  <div class="question-type-description">Câu hỏi yêu cầu người dùng kết nối các mục trong hai danh sách</div>
+                </div>
+              </div>
+
+              <!-- Dạng 5: Fill in the Blank -->
+              <div id="testType5" class="question-type-item question-type-fill-blank" data-type="fill-blank">
+                <div class="question-type-icon">
+                  <div class="question-type-icon-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="question-type-content">
+                  <div class="question-type-title">Bài nộp file, tự luận</div>
+                  <div class="question-type-description">Câu hỏi có chỗ trống để người dùng điền từ hoặc cụm từ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="question-popup-footer">
+            <button id="cancelBtnTEST" class="question-popup-button question-popup-cancel">Hủy</button>
+            <button id="saveALL" class="question-popup-button question-popup-select" >Lưu tất cả</button>
+            <button id="selectBtn" class="question-popup-button question-popup-select" disabled>Chọn</button>
+          </div>
+        </div>
+
+
+
+
+        <div class="popup-container" id="popupContainer">
+          <h2 id="titleADDQes">Thêm Câu Hỏi Trắc Nghiệm</h2>
+
+<!--          Dang cau hoi 1  - 3-->
+          <div id="questionList">
+
+
+          </div>
+
+          <button class="add-question-btn" id="addQuestionBtn">+ Thêm câu hỏi</button>
+          <button id="submitBtn" class="submit-btn">Lưu</button>
+          <button id="cancelBtnAddQue" class="question-popup-button question-popup-cancel">Huỷ</button>
+        </div>
+
+
+
+        <div class="popup-containerType4" id="QuestionType4">
+          <h2 id="titleType4">Thêm Câu Ghép từ <span></span></h2>
+          <h5 id="titleType41">tối đa 10 cặp từ <span></span></h5>
+          <span>Điền cặp từ đúng để ghép thành câu</span>
+
+          <!--          Dang cau hoi 4-->
+          <div id="Question4Content">
+
+
+          </div>
+
+          <button class="add-question-btn" id="addQuestionBtn2">+ Thêm cặp từ</button>
+          <button id="submitBtn2" class="submit-btn">Lưu</button>
+          <button id="cancelBtnAddQue2" class="question-popup-button question-popup-cancel">Huỷ</button>
+        </div>
+
+
+        <div class="lesson-sectionType5" id="lessonSection">
+          <h3 class="lesson-section-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Nội Dung Đề Bài
+          </h3>
+          <div class="lesson-toolbar">
+            <button type="button" class="lesson-tool-btn" data-command="bold">In đậm</button>
+            <button type="button" class="lesson-tool-btn" data-command="italic">In nghiêng</button>
+            <button type="button" class="lesson-tool-btn" data-command="underline">Gạch chân</button>
+            <button type="button" class="lesson-tool-btn" data-command="formatBlock" data-value="h2">Tiêu đề</button>
+            <button type="button" class="lesson-tool-btn" data-command="justifyLeft">Căn trái</button>
+            <button type="button" class="lesson-tool-btn" data-command="justifyCenter">Căn giữa</button>
+            <button type="button" class="lesson-tool-btn" data-command="justifyRight">Căn phải</button>
+            <button type="button" class="lesson-tool-btn" data-command="undo"><- Undo</button>
+            <button type="button" class="lesson-tool-btn" data-command="redo">-> Redo</button>
+          </div>
+
+          <div id="lessonContentType5" class="lesson-textarea" contenteditable="true">
+          </div>
+          <button id="submitBtnType5" class="submit-btn">Lưu</button>
+          <button id="cancelBtnType5" class="question-popup-button question-popup-cancel">Huỷ</button>
+        </div>
+
+
+
+
+        <div class="modal" id="modelPDF">
+          <div class="modal-header">
+            <h3 class="modal-title">Add PDF by URL</h3>
+            <button class="close-button" id="closeModalPDF">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="urlPDF" class="form-label">PDF URL</label>
+                <input type="url" id="urlPDF" class="form-input1" placeholder="https://example.pdf">
+              </div>
+
+              <div class="form-group">
+                <div class="lesson-toolbar">
+                  <button type="button" class="lesson-tool-btn" data-command="bold">In đậm</button>
+                  <button type="button" class="lesson-tool-btn" data-command="italic">In nghiêng</button>
+                  <button type="button" class="lesson-tool-btn" data-command="underline">Gạch chân</button>
+                  <button type="button" class="lesson-tool-btn" data-command="formatBlock" data-value="h2">Tiêu đề</button>
+                  <button type="button" class="lesson-tool-btn" data-command="justifyLeft">Căn trái</button>
+                  <button type="button" class="lesson-tool-btn" data-command="justifyCenter">Căn giữa</button>
+                  <button type="button" class="lesson-tool-btn" data-command="justifyRight">Căn phải</button>
+                  <button type="button" class="lesson-tool-btn" data-command="undo"><- Undo</button>
+                  <button type="button" class="lesson-tool-btn" data-command="redo">-> Redo</button>
+                </div>
+
+                <div id="PDFDescription" class="lesson-textarea" contenteditable="true">
+
+                </div>
+              </div>
+            </form>
+            <div >
+              <button class="btn btn-cancel" id="cancelBtnPDF">Cancel</button>
+              <!--              <button class="btn btn-primary" id="checkUrlBtn">Preview</button>-->
+              <button class="btn btn-primary" id="submitBtnPDF">Add File</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="popup-container" id="popupContainer1">
+      <h2 id="titleAudio">Thêm Câu hỏi nghe và điền từ</h2>
+
+      <!--          Dang cau hoi 1  - 3-->
+      <div id="questionList1">
+
+
+      </div>
+
+      <button class="add-question-btn" id="addQuestionBtn1">+ Thêm câu hỏi</button>
+      <button id="submitBtn1" class="submit-btn">Lưu</button>
+      <button id="cancelBtnAddQue1" class="question-popup-button question-popup-cancel">Huỷ</button>
+    </div>
+
+
+
+
+
+
+
+
+  </main>
+  <!-- MAIN -->
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+
+<!-- Firebase Authentication (Compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+<!-- Firebase Firestore (Compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="../JSAdmin/fireBaseData.js"></script>
+
+<script src="../JSAdmin/changPage.js"></script>
+
+
+
+<script src="../JSAdmin/addDataForLesson.js"></script>
+
+
+
+
+
+
+</body>
+</html>

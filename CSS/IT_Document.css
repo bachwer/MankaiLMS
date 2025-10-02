@@ -1,0 +1,375 @@
+/* General container styling */
+.tab-content.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
+}
+
+.tab-content {
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.tab-btn.active {
+    border-bottom: 3px solid #ff6600;
+    color: #ff6600;
+    background-color: #f9f9f9;
+}
+
+
+
+
+.containerMain {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+/* Heading styles */
+.containerMain h2 {
+    font-size: 20px;
+    width: 630px;
+    height: 60px;
+    font-size: 20px;
+    color: #2D2C2C;
+    margin-bottom: 15px;
+}
+
+.containerMain h4 {
+    font-size: 16px;
+    color: #2D2C2C;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content {
+    border: #DDDDDD 1px solid;
+    border-radius: 8px;
+    padding: 16px 24px;
+    background-color: #FAFAFA;
+    max-height: 300px;
+    /* Limit height */
+    overflow-y: auto;
+}
+
+.content ul li {
+    margin-bottom: 16px;
+    list-style-type: none;
+    color: #3D3D3D;
+    font-size: 16px;
+}
+
+/* List styling */
+.containerMain ul.list {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.containerMain ul.list li {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #3D3D3D;
+    font-size: 16px;
+}
+
+/* Sub-section styling */
+.containerMain div {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.containerMain div h3 {
+    font-size: 18px;
+    color: #2D2C2C;
+    margin-bottom: 10px;
+}
+
+/* Bold text styling */
+.containerMain div b {
+    font-weight: bold;
+    color: #2D2C2C;
+}
+
+/* Related articles styling */
+.containerMain div:last-child {
+    margin-top: 20px;
+    color: #2D2C2C;
+}
+
+/* Tab container styling */
+.tab-container {
+    border: 1px solid #ddd;
+    width: 100%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Tab header styling */
+.tab-header {
+    display: flex;
+    justify-content: flex-start;
+    /* Căn về bên trái */
+    gap: 12px;
+    /* Khoảng cách giữa các nút */
+    padding: 8px 16px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #F37142;
+    color: #F37142;
+    background-color: #FFF7F4;
+}
+
+
+.tab-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+
+/* Tab content styling */
+.tab-content {
+    padding: 16px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+    max-height: 300px;
+    /* Limit height */
+    overflow-y: auto;
+    /* Add scroll if content exceeds height */
+    border-top: 1px solid #ddd;
+}
+
+.tab-content p {
+    margin-bottom: 10px;
+}
+
+/* Image styling */
+.tab-container img {
+    display: block;
+    margin: 10px auto;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.tab-content b {
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Paragraph styling */
+.tab-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* List styling */
+.tab-content ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.tab-content ul li {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.tab-btn.active {
+    border-bottom: 3px solid #ff6600;
+    color: #ff6600;
+    background-color: #f9f9f9;
+}
+
+.tab-container.collapsed .tab-header,
+.tab-container.collapsed .tab-content {
+    display: none;
+}
+
+.tab-container.collapsed .tab-header,
+.tab-container.collapsed .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.tab-container.collapsed img {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.file-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    transition: 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.file-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.file-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.file-meta {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.file-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2C2C2C;
+    margin: 0;
+}
+
+.file-size {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 2px;
+}
+
+
+
+.discussion-section {
+    padding: 16px;
+    background-color: #fff;
+}
+
+/* Ô nhập bình luận */
+.comment-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 8px 12px;
+    background-color: #FAFAFA;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.comment-input .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.comment-input input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+.send-btn {
+    background-color: #F37142;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Số bình luận */
+.comment-count {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* Bình luận */
+.comment {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.comment .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.comment-body {
+    background-color: #F7F7F7;
+    padding: 12px 16px;
+    border-radius: 12px;
+    flex: 1;
+}
+
+.comment-author {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #2D2C2C;
+}
+
+.comment-text {
+    font-size: 14px;
+    color: #3D3D3D;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.comment-meta {
+    font-size: 12px;
+    color: #999;
+}
+
+.comment-meta .reply {
+    color: #F37142;
+    cursor: pointer;
+    margin-left: 4px;
+}

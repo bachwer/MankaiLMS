@@ -1,0 +1,512 @@
+.containerMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.BtnAnswer {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+
+}
+
+.containerMain p {
+    font-size: 24px;
+    color: #3D3D3D;
+    line-height: 2;
+}
+
+.containerMain p span {
+    color: #F37142;
+}
+
+.numQuestion {
+    padding-bottom: 24px;
+    padding-top: 24px;
+    color: #676767;
+}
+
+.containerMain h1 {
+    padding-bottom: 24px;
+}
+
+.btn2 {
+    padding: 5px 20px;
+    height: 50px;
+    border: 2px solid #B5B5B5;
+    border-radius: 16px;
+    background-color: #FFFF;
+    box-shadow: 0 3px 0 0 #B5B5B5;
+    color: #B5B5B5;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    background-color: #ededed;
+}
+
+.btn4 {
+    padding: 5px 20px;
+    height: 50px;
+    border: 2px solid #039855;
+    border-radius: 16px;
+    background-color: #32D583;
+    box-shadow: 0 3px 0 0 #039855;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn4:hover {
+    background-color: #2cac6b;
+}
+
+.containerFooter {
+    margin-top: 150px;
+    border-top: 1px solid #DDDDDD;
+
+}
+
+.containerFooter {
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/* Success Banner Container */
+.success-banner {
+    padding: 24px 16px;
+    background: #D1FADF;
+    border-top: 1px #32D583 solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+/* Left side content container */
+.success-banner .banner-content-banner {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Icon container */
+.success-banner .icon-container-banner {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    background: white;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Text container */
+.success-banner .text-container-banner {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Title text */
+.success-banner .title-banner {
+    text-align: center;
+    color: #12B76A;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    word-wrap: break-word;
+}
+
+/* Subtitle container */
+.success-banner .subtitle-banner {
+    text-align: center;
+    color: #676767;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+/* Button container */
+.success-banner .button-container-banner {
+    width: 116px;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Button wrapper */
+.success-banner .button-wrapper-banner {
+    flex: 1 1 0;
+    box-shadow: 0px 2px 0px #039855;
+    overflow: hidden;
+    border-radius: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Button styling */
+.success-banner .button-banner {
+    flex: 1 1 0;
+    padding: 12px 20px;
+    background: #32D583;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    overflow: hidden;
+    border-radius: 16px;
+    outline: 1px #039855 solid;
+    outline-offset: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Button text */
+.success-banner .button-text-banner {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+/* FAIL-BANNER-CONTAINER */
+.fail-banner {
+    padding: 24px 16px;
+    background: #FEF3F2;
+    border-top: 1px #F04438 solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+/* Left side content container */
+.fail-banner .banner-content-banner {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Icon container */
+.fail-banner .icon-container-banner {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    background: white;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Text container */
+.fail-banner .text-container-banner {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Title text */
+.fail-banner .title-banner {
+    text-align: center;
+    color: #F04438;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    word-wrap: break-word;
+}
+
+/* Subtitle container */
+.fail-banner .subtitle-banner {
+    text-align: center;
+    color: #676767;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+/* Button container */
+.fail-banner .button-container-banner {
+    width: 116px;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Button wrapper */
+.fail-banner .button-wrapper-banner {
+    flex: 1 1 0;
+    box-shadow: 0px 2px 0px #F97066;
+    overflow: hidden;
+    border-radius: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Button styling */
+.fail-banner .button-banner {
+    flex: 1 1 0;
+    padding: 12px 20px;
+    background: #F97066;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    overflow: hidden;
+    border-radius: 16px;
+    outline: 1px #D92D20 solid;
+    outline-offset: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Button text */
+.fail-banner .button-text-banner {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+/* popUp */
+.overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.popUp {
+    display: none;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 16px;
+    /* flex: 1 0 0; */
+    width: 800px;
+    height: 555px;
+    padding-top: 64px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    background: #FFF;
+    z-index: 10000000;
+}
+
+.popUp .point-text{
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-complete {
+    color: #F5B64A;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.point-popUp {
+    display: flex;
+    gap: 24px;
+}
+
+.point-me {
+    border-radius: 8px;
+    background: #32D583;
+}
+
+.point {
+    display: flex;
+    width: 108px;
+    height: 85px;
+    padding: 2px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.point-number-me {
+    color: #32D583;
+}
+
+.pnt {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 6px;
+    background: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21.6px;
+}
+
+.point-expre {
+    border-radius: 8px;
+    background: #F5B64A;
+}
+
+.point-number-kn {
+    color: #F5B64A;
+}
+
+.btn-point-popUp {
+    display: flex;
+    padding: 40px 64px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 27.06px;
+    margin-left: 0px;
+    border-top: 1px solid #DDD;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.redo {
+    padding: 12px 20px;
+    border-radius: 16px;
+    box-shadow: 0px 2px 0px 0px #B5B5B5;
+    border: 1px solid #B5B5B5;
+    background: #FFF;
+    color: #B5B5B5;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.study {
+    padding: 12px 20px;
+    border-radius: 16px;
+    padding: 12px 20px;
+    border: 1px solid #F5B64A;
+    background: #F5B64A;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: #FFF;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.study img {
+    left: 15.265px;
+    top: 0;
+}
+
+.popUpContainer {
+    display: none;
+}
+
+.explain-contain {
+    border-top: 1px solid #DDD;
+    background-color: white;
+    padding: 10px;
+    margin-top: 60px;
+
+}
+
+.explanation-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    height: 100px;
+}
+
+.explanation-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    padding-top: 16px;
+}
+
+.explanation-content {
+    padding-left: 16px;
+}
+
+
+.spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none; /* Ẩn mặc định */
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #ec754a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+

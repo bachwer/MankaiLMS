@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
+  <!-- My CSS -->
+  <link rel="stylesheet" href="../CSS/topic.css" />
+  <link rel="stylesheet" href="../CSS/Courses.css" />
+  <!-- Thêm vào head của file HTML -->
+
+  <title>MankaiHub</title>
+</head>
+<body>
+<!-- SIDEBAR -->
+<section id="sidebar">
+  <a href="#" class="brand" id="brandLink">
+    <img src="../img/logoandtextlogo.svg" alt="logo">
+  </a>
+
+  <ul class="side-menu top">
+    <li >
+      <a id="dashboardLink" >
+        <i class="bx bxs-dashboard"></i>
+        <span class="text">Dashboard</span>
+      </a>
+    </li>
+    <li >
+      <a href="#" id="topicLink" class="active">
+        <i class="bx bxs-shopping-bag-alt"></i>
+        <span class="text">Topic + word</span>
+      </a>
+    </li>
+    <li class="active">
+      <a href="#" id="messageLink">
+        <i class="bx bxs-message-dots"></i>
+        <span class="text">Courses</span>
+      </a>
+    </li>
+    <li >
+      <a id="studentLink" >
+        <i class="bx bxs-group"></i>
+        <span class="text">Student</span>
+      </a>
+    </li>
+    <li >
+      <a id="addExamLink" >
+        <i class="bx bxs-graduation"></i>
+
+        <span class="text">Exam</span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="side-menu">
+    <li>
+      <a href="#" id="settingsLink" >
+        <i class="bx bxs-cog"></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" id="logoutLink" >
+        <i class="bx bxs-log-out-circle"></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- SIDEBAR -->
+
+<!-- CONTENT -->
+<section id="content">
+  <!-- NAVBAR -->
+  <nav>
+    <i class="bx bx-menu"></i>
+    <div class="logo-admin">
+      <input type="checkbox" id="switch-mode" hidden />
+      <label for="switch-mode" class="switch-mode"></label>
+      <a href="#" class="notification">
+        <i class="bx bxs-bell"></i>
+        <span class="num">8</span>
+      </a>
+      <a href="#" class="profile">
+        <img src="../img/quanmario.png" />
+      </a>
+    </div>
+
+  </nav>
+  <!-- NAVBAR -->
+
+  <!-- MAIN -->
+
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <h1>Courses</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Courses</a>
+          </li>
+          <li><i class="bx bx-chevron-right"></i></li>
+          <li>
+            <a class="active" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+      <div class="change-word">
+
+        <a id="btnAdd" class="btn-new">
+          <i class="bx bxs-plus-square"></i>
+          <span class="status.adding">Add New</span>
+        </a>
+      </div>
+    </div>
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search..." />
+        <button type="submit" class="search-btn">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </form>
+    <!-- Main Content -->
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Courses</h3>
+          <i class="bx bx-search"></i>
+          <i class="bx bx-filter"></i>
+        </div>
+        <section id="SectionMainContent" class="content">
+
+
+
+
+
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+  <!-- MAIN -->
+</section>
+
+
+<div id="overlay" class="overlay"></div>
+<div class="add-course-modal" id="addCourseModal">
+  <div class="add-course-modal-content">
+    <div class="add-course-modal-header">
+      <h3>Thêm khóa học mới</h3>
+      <button id="closeAddCourseModal" class="close-modal-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="add-course-modal-body">
+      <div class="form-group">
+        <label for="courseTitle">Tên khóa học <span class="required">*</span></label>
+        <input type="text" id="courseTitle" placeholder="Nhập tên khóa học...">
+      </div>
+<!--      <div class="form-group">-->
+<!--        <label for="courseLessons">Số bài học <span class="required">*</span></label>-->
+<!--        <input type="number" id="courseLessons" min="1" placeholder="Nhập số bài học...">-->
+<!--      </div>-->
+
+      <div class="add-word-modal-footer">
+        <button id="cancelAddWord" class="secondary-btn">Hủy bỏ</button>
+        <button id="saveNewWord" class="primary-btn ">Thêm mới</button>
+      </div>
+
+
+
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+
+<!-- Firebase Authentication (Compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+<!-- Firebase Firestore (Compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+
+<script src="../JSAdmin/changPage.js"></script>
+
+
+<script src="../JSAdmin/fireBaseData.js"></script>
+<script src="../JSAdmin/courses.js"></script>
+
+
+
+
+</body>
+</html>

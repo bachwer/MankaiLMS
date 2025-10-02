@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../CSS/composition.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/a5e9eda380.js"></script>
+
+    <script src="../JS/checkDatahome.js"></script>
+
+</head>
+
+
+<header>
+    <div id="logoHome">
+        <img alt="Icon" src="../assets/Group 1.svg"/>
+    </div>
+    <div class="menu">
+        <div class="headerLogin2">
+
+            <span id="testPage">Thi thử mỗi ngày</span>
+
+            <span id="topicPage">Chủ đề</span>
+
+            <label>
+                <select class="study-select" onchange="handleSelect(this)">
+                    <option value="home">Học tập</option>
+                    <option value="search">Tra cứu</option>
+                </select>
+                <i class="fa-solid fa-angle-down"></i>
+            </label>
+        </div>
+        <div class="headerLogin3 " >
+            <div class="lang">
+                <img  alt="Icon" src="../assets/VN.svg" style="margin-right: 8px;"/>
+
+                <span>VI</span>
+                <div class="dropdown-menu">
+                    <button > <img  alt="Icon" src="../assets/VN.svg" style="width: 25px;"/> VietNam</button>
+                    <button ><div class="flag-wrapper"><img class="flag" alt="Icon" src="../assets/JP.png" ></div>Japanese</button>
+                </div>
+            </div>
+            <div class="containerAvatar">
+                <img class="Avatar imgLoadLc" alt="Icon" src="../assets/Avatar.svg"/>
+                <div class="popUpInformation">
+
+                    <div class="box1">
+                        <img class="Avatar imgLoadLc" alt="Icon" src="../assets/Avatar.svg"/>
+                        <div >
+                            <h3 id="nameInfo">Quách Văn Sơn Bách</h3>
+                            <span id="emailInfo">quachbach38@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div id="informationUser" class="box2">
+                        <span>Thông Tin</span>
+                    </div>
+                    <div id="signOut" class="box2">
+                        <span class="textSignOut">Đăng xuất</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+
+
+<body>
+<div class="name-test">
+    <nav>
+        <img class="Navimg" src="../assets/ChevronContainer.svg" />
+        <a class="text-gray font-text">Trang chủ /</a>
+        <a class="text-gray font-text">Thi thử cùng Mankai /</a>
+        <a class="font-text">Đề thi N1</a>
+    </nav>
+    <div class="name-num">
+        <p class="name-text">Bài thi JLPT N1 Số 1</p>
+        <div class="content-btn">
+            <div class="next">
+                <button id="test1" class="btn-lis btn">
+                    Chữ Hán - Từ vựng
+                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="2" viewBox="0 0 37 2" fill="none">
+                    <path d="M0 1H36.168" stroke="#12B76A" stroke-dasharray="4 4" />
+                </svg>
+                <div>
+                    <img src="../assets/arrowRightGreen.svg">
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="2" viewBox="0 0 37 2" fill="none">
+                    <path d="M0.167969 1H36.3359" stroke="#F37142" stroke-dasharray="4 4" />
+                </svg>
+                <button id="test2" class="btn-lis btn">
+                    Ngữ pháp - Đọc <hiểu></hiểu>
+                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="2" viewBox="0 0 37 2" fill="none">
+                    <path d="M0.335938 1H36.5039" stroke="#DDDDDD" stroke-dasharray="4 4" />
+                </svg>
+                <div>
+                    <img src="../assets/arrowRightGray.svg">
+                </div>
+                <button id="test3" class="btn-lis btn">
+                    Nghe hiểu
+                </button>
+            </div>
+            <div><button class="submit" id="submit-btn"><span>Nộp bài</span></button></div>
+        </div>
+    </div>
+</div>
+<div class="spinner-container" id="spinnerContainer">
+    <div class="spinner"></div>
+</div>
+<section class="main-container">
+    <section class="section" id="list-ques"></section>
+    <!-- <aside> -->
+    <section class="thu" id="tableQues">
+        <div class="header-navi">
+            <p>Ngữ pháp - Đọc hiểu</p>
+            <P>Thời gian còn lại: <span id="test-time">00:45:00</span></P>
+            <div class="group-ques1" id="group-ques1">
+                <P>Nhóm câu hỏi 1</P>
+                <div class="list-navi">
+                    <!-- <button class="btn-navi">1</button>
+                    <button class="btn-navi">2</button>
+                    <button class="btn-navi">3</button>
+                    <button class="btn-navi">4</button>
+                    <button class="btn-navi">5</button>
+                    <button class="btn-navi">6</button>
+                    <button class="btn-navi">7</button> -->
+                </div>
+                <!-- <div class="btn-footer-navi">
+                    <button class="exit text-btn" id="exit">Thoát</button>
+                    <button class="trans text-btn" id="trans">Chuyển phần</button>
+                </div> -->
+            </div>
+        </div>
+
+
+        <!-- <div class="group-ques1" id="group-ques2">
+            <P>Nhóm câu hỏi 1</P>
+            <div>
+                <button class="btn-navi">1</button>
+                <button class="btn-navi">2</button>
+                <button class="btn-navi">3</button>
+                <button class="btn-navi">4</button>
+                <button class="btn-navi">5</button>
+                <button class="btn-navi">6</button>
+                <button class="btn-navi">7</button>
+            </div>
+        </div> -->
+        <!-- <div class="group-ques1" id="group-ques3">
+            <P>Nhóm câu hỏi 1</P>
+            <div>
+                <button class="btn-navi">1</button>
+                <button class="btn-navi">2</button>
+                <button class="btn-navi">3</button>
+                <button class="btn-navi">4</button>
+                <button class="btn-navi">5</button>
+                <button class="btn-navi">6</button>
+                <button class="btn-navi">7</button>
+            </div> -->
+
+
+    </section>
+</section>
+<!-- </aside> -->
+</div>
+<section id="pop-up-sec" style="display: none;">
+    <div id="overlay" class="overlay"></div>
+    <div id="popUp" class="popUp">
+        <div class="boxDetail-header">
+            <div class="flex">
+                <img src="../assets/medal.svg">
+                <div class="text-complete">Hoàn thành bài kiểm tra!</div>
+                <div class="point-popUp">
+                    <div class="point-me point">
+                        <div class="point-text">Từ vựng</div>
+                        <div class="point-number-voca pnt" id="voca"></div>
+                    </div>
+                    <div class="point-expre point">
+                        <div class="point-text">Đọc hiểu</div>
+                        <div class="point-number-under pnt" id="read"></div>
+                    </div>
+                    <div class="point-lis point">
+                        <div class="point-text">Nghe hiểu</div>
+                        <div class="point-number-under pnt" id="lis"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-point-popUp">
+                <button class="redo" id="redo">Về trang chủ</button>
+                <button class="study" id="study" style="position: relative;"><img src="../assets/Frame 1000007256.svg"
+                                                                                  style="position: absolute;">Kết quả</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section style="display: none;">
+    <div id="overlay1" class="overlay"></div>
+    <div id="popUp1" class="popUp1">
+        <div class="boxDetail-header">
+        <div class="flex">
+            <img src="../../assets1/Icon (6).svg">
+            <div class="text-confir">Bạn xác nhận chuyển phần?</div>
+            <div class="text-delete">Hãy đảm bảo bạn đã hoàn thành toàn bộ phần thi
+                <p>để đạt được kết quả tốt nhất!</p>
+            </div>
+        </div>
+        <div class="btn-point-popUp1">
+            <button class="redo">Hủy</button>
+            <button class="study" style="position: relative;"><img src="../../assets1/Frame 1000007256.svg"
+                    style="position: absolute;">Xác nhận</button>
+        </div>
+        </div>
+    </div>
+</section>
+<section style="display: none;">
+    <div id="overlay2" class="overlay" style="display: none;"></div>
+    <div id="popUp2" class="popUp1">
+        <div class="flex">
+            <img src="../../assets1/Icon (6).svg">
+            <div class="text-confir">Bạn xác nhận thoát bài thi</div>
+            <div class="text-delete">Kết quả bài thi của bạn sẽ được tự động lưu lại
+                <p>trong hệ thống.</p>
+            </div>
+        </div>
+        <div class="btn-point-popUp1">
+            <button class="redo">Hủy</button>
+            <button class="study" style="position: relative;"><img src="../../assets1/Frame 1000007256.svg"
+                    style="position: absolute;">Xác nhận</button>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+
+<script src="../JS/LoadDataFireBase.js"></script>
+<script src="../JS/JSMenu.js"></script>
+
+
+
+
+<script src="../JS/LoadDataforExam.js"></script>
+<script src="../JS/composition.js"></script>
+
+</body>
+
+</html>
+
+    

@@ -1,0 +1,145 @@
+
+.card-level {
+    font-size: 14px;
+    font-weight: 400;
+    color: #a9a9a9;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.card-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.card-participants,
+.card-duration {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.card-participants img,
+.card-duration img {
+    width: 24px;
+    height: 24px;
+}
+
+.card-title,
+.card-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Nút thi */
+.card-button {
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border: 2px solid #DD673C;
+    border-radius: 16px;
+    box-shadow: 0 4px 0 0 #AD502F;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #F37142;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-button:hover {
+    border-color: #d56239;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            -115deg,
+            #F37142 60%,
+            #f8854f 60%,
+            #f8854f 62%,
+            #F37142 62%,
+            #F37142 65%,
+            #f8854f 65%,
+            #f8854f 70%,
+            #F37142 70%,
+            #F37142 73%,
+            #f8854f 73%,
+            #f8854f 75%,
+            #F37142 75%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.card-button span {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.progress-all{
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    width: 100%;
+}
+
+.progress-bar {
+    flex: 1;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    height: 10px;
+    width: 50%;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    border: #F37142 3.5px solid;
+    background-color: #ff895e;
+}
+
+.progress-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f36e2f;
+    margin-left: 5px;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.box {
+    width: 270px;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    box-shadow: 0 5px 0 0 #DDDDDD;
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.box:hover {
+    background-color: #FAFAFA;
+}

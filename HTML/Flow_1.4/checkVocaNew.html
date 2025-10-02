@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Title</title>
+   <link rel="stylesheet" href="../../CSS/flow1.4..css">
+  <link rel="stylesheet" href="../../CSS/checkVocaNew.css" />
+  <!-- <link rel="stylesheet" href="../../CSS/Flow_2.1/finalTest.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<header>
+  <div class="boxHeader">
+    <img src="../../assets/arrowLeft.svg" />
+    <h2>Tên bài học</h2>
+  </div>
+
+  <div class="boxHeader">
+    <img src="../../assets/progress.svg" alt="ion" />
+    <h2>Tiến Trình</h2>
+  </div>
+</header>
+
+<body>
+<main>
+  <section class="menu">
+    <div class="menuTitle">
+      <h3>Danh sách bài</h3>
+      <span>4 videos •</span>
+      <span> 50 phút •</span>
+      <span>1 bài Test</span>
+    </div>
+
+    <div id="video" class="video">
+      <div id="classVideo" class="boxMain">
+        <img src="../../assets/play-circle.svg" alt="icon">
+        <span>Video</span>
+        <span id="progressVideo">0%</span>
+      </div>
+    </div>
+
+    <div id="flashCard">
+      <div class="menuVideo">
+        <img src="../../assets/flashCard.svg" alt="icon">
+        <span>Flash card</span>
+        <span id="progressFlash">0%</span>
+      </div>
+    </div>
+
+    <div id="test">
+      <div class="boxMain">
+        <img src="../../assets/task-square.svg" alt="icon">
+        <span>Bài kiểm tra</span>
+        <span id="progressTest">0%</span>
+      </div>
+    </div>
+
+    <div id="Sile">
+      <div class="boxMain">
+        <img src="../../assets/iconPDF.svg" alt="icon">
+        <span>Slide / PDF</span>
+        <span id="progressPDF">0%</span>
+
+      </div>
+    </div>
+
+    <div id="book">
+      <div class="boxMain">
+        <img src="../../assets/book.svg" alt="icon">
+        <span>Text</span>
+        <span id="progressText">0%</span>
+      </div>
+    </div>
+
+    <div id="audio">
+      <div class="boxMain">
+        <img src="../../assets/headphone.svg" alt="icon">
+        <span>Audio / Script</span>
+        <span id="progressAudio">0%</span>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="container2">
+      <div class="container1">
+        <div class="boxIconContainer">
+          <img src="../../assets/iconTextJapan.svg" />
+        </div>
+        <div class="container12">
+          <h3>Tên bài học</h3>
+          <span>Lật thẻ, ôn bài – vừa vui vừa hiệu quả.</span>
+        </div>
+      </div>
+      <div class="btn">
+        <button class="btn2">
+          Bài tiếp Theo
+          <img src="../../assets/arrow-right.svg" />
+        </button>
+        <button class="btn1">
+          Bài tiếp Theo
+          <img src="../../assets/arrow-up-right.svg" />
+        </button>
+      </div>
+    </div>
+
+    <div class="background-containerMain">
+      <div class="containerMain">
+        <!-- <div class="card-container"> -->
+        <div class="nav-progress">
+          <div class="time-test">
+            <p class="text-time-test">Kiểm tra</p>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+          <div class="power" id="power">
+            <img src="../../assets/power.svg" />
+          </div>
+        </div>
+
+        <div id="question">
+          <!-- render câu hỏi theo mẫu bên dưới bằng js-->
+          <!-- <div class="card-title">
+            <div class="card-subject">
+              <div class="card-content">こんにちは</div>
+            </div>
+          </div>
+
+          <div class="answer-test">
+            <div class="ans correct">
+              <div class="icon-ans" id="a">A</div>
+              <div>
+                <p class="t">こんにちは</p>
+              </div>
+            </div>
+            <div class="ans failed">
+              <div class="icon-ans" id="b">B</div>
+              <div>
+                <p class="t">こんにちは</p>
+              </div>
+            </div>
+            <div class="ans failed">
+              <div class="icon-ans" id="c">C</div>
+              <div>
+                <p class="t">こんにちは</p>
+              </div>
+            </div>
+            <div class="ans failed">
+              <div class="icon-ans" id="d">D</div>
+              <div>
+                <p class="t">こんにちは</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <div class="explanation-container" style="display: none">
+        <div class="explain-contain">
+          <div class="explanation-title">Giải thích:</div>
+          <div class="explanation-content">
+            <span class="key">私はグエン・タイ・デュイです。</span>郵政通信技術大学の学生です 私は
+          </div>
+        </div>
+
+        <div class="alert-correct">
+          <div class="correct-feedback">
+            <div class="icon-correct">
+              <img src="../../assets/correct.svg" />
+            </div>
+            <div class="content-mes">
+              <div class="feedback-title">Chính xác! Làm tốt lắm</div>
+              <div class="feedback-message">Hãy tiếp tục phát huy</div>
+            </div>
+          </div>
+          <button class="continue-btn selected" id="popUp-complete2" style="display: none">
+            Tiếp tục
+          </button>
+        </div>
+
+      </div>
+
+      <div class="explanation-container1" style="display: none">
+        <div class="explain-contain">
+          <div class="explanation-title">Giải thích:</div>
+          <div class="explanation-content">
+            <span class="key">私はグエン・タイ・デュイです。</span>郵政通信技術大学の学生です 私は
+          </div>
+        </div>
+
+        <div class="alert-failed">
+          <div class="failed-feedback">
+            <div class="icon-correct">
+              <img src="../../assets/Frame 1000007307.svg" />
+            </div>
+            <div class="content-mes">
+              <div class="feedback-title-fail">Chưa chính xác!</div>
+              <div class="feedback-message">Hãy xem lời giải để hiểu bài nhé</div>
+            </div>
+          </div>
+          <button class="continue-btn-fail selected" id="popUp-complete" style="display: none;">
+            Tiếp tục
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-change-ques">
+      <div class="btn-change">
+        <button class="ques-prev btn-chg">Câu trước</button>
+        <button class="check btn-chg">Kiểm tra</button>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="spinner-container" id="spinnerContainer">
+  <div class="spinner"></div>
+</div>
+
+
+<section>
+  <div id="overlay" class="overlay"></div>
+  <div id="popUp" class="popUp">
+    <!-- <div class="boxDetail-header"> -->
+    <div class="flex">
+      <img src="../../assets/medal.svg" />
+      <div class="text-complete">Hoàn thành bài kiểm tra Từ vưng!</div>
+      <div class="point-popUp">
+        <div class="point-expre point">
+          <div class="point-text">Điểm KN</div>
+          <div class="point-number-kn pnt">
+            <img src="../../assets/Object 1.svg" />
+            <div id="score-point">10</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-point-popUp">
+      <button class="redo">Làm lại</button>
+      <button id="study" class="study" style="position: relative">
+        <img src="../../assets/Frame 1000007256.svg" style="position: absolute" />Học tiếp
+      </button>
+    </div>
+    <!-- </div> -->
+  </div>
+</section>
+<script src="../../JS/checkData.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="../../JS/LoadDataFireBase.js"></script>
+
+<script src="../../JS/All_Obj_Flow1_4.js"></script>
+<script src="../../JS/convertPage.js"></script>
+
+
+
+
+<script src="../../JS/checkProgressLesson.js"></script>
+<script src="../../JS/UpdatePoint.js"></script>
+<script src="../../JS/checkVocaNew.js"></script>
+
+
+</body>
+
+</html>
+

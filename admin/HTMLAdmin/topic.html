@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../CSS/topic.css" />
+    <!-- Thêm vào head của file HTML -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+
+    <title>MankaiHub</title>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand" id="brandLink">
+        <img src="../img/logoandtextlogo.svg" alt="logo">
+      </a>
+
+      <ul class="side-menu top">
+        <li >
+          <a id="dashboardLink" >
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="#" id="topicLink" class="active">
+            <i class="bx bxs-shopping-bag-alt"></i>
+            <span class="text">Topic + word</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="messageLink">
+            <i class="bx bxs-message-dots"></i>
+            <span class="text">Courses</span>
+          </a>
+        </li>
+        <li >
+          <a id="studentLink" >
+            <i class="bx bxs-group"></i>
+            <span class="text">Student</span>
+          </a>
+        </li>
+        <li>
+          <a id="addExamLink" >
+            <i class="bx bxs-graduation"></i>
+
+            <span class="text">Exam</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" id="settingsLink" >
+            <i class="bx bxs-cog"></i>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="logoutLink" >
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <div class="logo-admin">
+            <input type="checkbox" id="switch-mode" hidden />
+            <label for="switch-mode" class="switch-mode"></label>
+            <a href="#" class="notification">
+              <i class="bx bxs-bell"></i>
+              <span class="num">8</span>
+            </a>
+            <a href="#" class="profile">
+              <img src="../img/quanmario.png" />
+            </a>
+        </div>
+        
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Topic</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Topic</a>
+              </li>
+              <li><i class="bx bx-chevron-right"></i></li>
+              <li>
+                <a class="active" href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div class="change-word">
+            <a id="btnAdd" class="btn-new">
+                <i class="bx bxs-plus-square"></i>
+                <span class="status.adding">Add New</span>
+            </a>
+          </div>
+        </div>
+        <form action="#">
+            <div class="form-input">
+              <input id="searchTopic" type="search" placeholder="Search..." />
+              <button type="submit" class="search-btn">
+                <i class="bx bx-search"></i>
+              </button>
+            </div>
+          </form>
+<!-- Main Content -->
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Topic</h3>
+              <i class="bx bx-search"></i>
+              <i class="bx bx-filter"></i>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Chủ đề</th>
+                  <th>Số lượng từ</th>
+                  <th>action</th>
+                </tr>
+              </thead>
+              <tbody id="contentTopic">
+
+<!-- Main Content -->              
+              </tbody>
+
+            </table>
+            <div class="pagination" id="pagination">
+
+            </div>
+          </div>
+        </div>
+          
+      </main>
+      <!-- MAIN -->
+    </section>
+
+
+    <!-- model Add vocabulary-->
+    <div id="overlay" class="overlay"></div>
+    <div id="popUpDetail" class="popUp">
+
+       <div class="popUp-header">
+      <h2>Thêm chủ đề từ vựng mới</h2>
+      <button id="closePopup" class="close-btn">&times;</button>
+    </div>
+
+      <div class="form-group">
+        <label for="topic">Chủ đề từ vựng</label>
+        <input type="text" id="topic" placeholder="Ví dụ: Chào hỏi, Gia đình, Du lịch...">
+        <small id="descriptionTopicAdd"></small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="description">Mô tả ngắn (không bắt buộc)</label>
+        <textarea id="description" placeholder="Mô tả về chủ đề từ vựng..."></textarea>
+      </div>
+
+      <div class="button-group">
+        <button id="cancelBtn" class="secondary-btn">Hủy bỏ</button>
+        <button id="addTopicBtn" class="primary-btn">Thêm chủ đề</button>
+      </div>
+    </div>
+
+    <!-- model Show detail vocabulary-->
+
+    <!-- HTML Structure -->
+    <div class="overlay" id="modalOverlay"></div>
+    <div class="modal" id="vocabularyModal">
+      <div class="modal-header">
+        <div class="topic-info">
+          <span class="topic-label">CHỦ ĐỀ:</span>
+          <h2 class="topic-title" id="titleVocabulary"></h2>
+        </div>
+        <div class="modal-actions">
+          <button id="addWordBtn" class="add-word-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Thêm từ mới
+          </button>
+          <button id="closeModal" class="close-modal-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="search-container">
+          <input type="text" id="searchWord" placeholder="Tìm kiếm từ vựng...">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 19L14.5 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="vocab-stats">
+          <div class="stat-item">
+            <span class="stat-value" id="numberWord">12</span>
+            <span class="stat-label">Tổng số từ</span>
+          </div>
+        </div>
+
+        <div class="content-words" id="contentWords">
+          <!-- Word Item  -->
+
+
+
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="pagination">
+          <button class="pagination-btn prev-btn" disabled>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <span class="pagination-info">Trang 1 / 1</span>
+          <button class="pagination-btn next-btn" disabled>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add topic Modal -->
+    <div class="add-word-modal" id="addWordModal">
+      <div class="add-word-modal-content">
+        <div class="add-word-modal-header">
+          <h3>Thêm từ mới</h3>
+          <button id="closeAddWordModal" class="close-modal-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="add-word-modal-body">
+          <div class="form-group">
+            <label for="newWord">Từ mới</label>
+            <input type="text" id="newWord" placeholder="Nhập từ mới...">
+          </div>
+          <div class="form-group">
+            <label for="phonetic">Phiên âm</label>
+            <input type="text" id="phonetic" placeholder="Nhập phiên âm...">
+          </div>
+          <div class="form-group">
+            <label for="meaning">Nghĩa</label>
+            <input type="text" id="meaning" placeholder="Nhập nghĩa của từ...">
+          </div>
+
+        </div>
+        <div class="add-word-modal-footer">
+          <button id="cancelAddWord" class="secondary-btn">Hủy bỏ</button>
+          <button id="saveNewWord" class="primary-btn ">Lưu từ mới</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Word Modal -->
+
+
+    <div id="popUpDetail1" class="popUp1">
+      <div class="popUp-header">
+        <h2 id="modalTitle">Thêm từ vựng mới</h2>
+        <button id="closePopup1" class="close-btn">&times;</button>
+      </div>
+
+      <div class="form-group">
+        <label for="wordInput">Từ vựng</label>
+        <input type="text" id="wordInput" placeholder="Nhập từ vựng...">
+        <small id="descriptionWordAdd"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="meaningInput">Dịch nghĩa</label>
+        <input type="text" id="meaningInput" placeholder="Nhập nghĩa của từ...">
+      </div>
+
+      <div class="form-group">
+        <label for="phoneticInput">Phiên âm</label>
+        <input type="text" id="phoneticInput" placeholder="Nhập phiên âm...">
+      </div>
+
+
+      <div class="button-group">
+        <button id="deleteBtn" class="danger-btn">Xóa từ vựng</button>
+        <div class="right-buttons">
+          <button id="cancelBtn1" class="secondary-btn">Hủy bỏ</button>
+          <button id="saveWordBtn"  class="primary-btn addNeWord">Lưu từ vựng</button>
+          <button id="editBtn" style="display: none" class="secondary-btn">Lưu thay đổi</button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+
+    <!-- Firebase Authentication (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+    <!-- Firebase Firestore (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script src="../JSAdmin/changPage.js"></script>
+
+    <script src="../JSAdmin/fireBaseData.js"></script>
+    <script src="../JSAdmin/topic.js"></script>
+
+  </body>
+</html>

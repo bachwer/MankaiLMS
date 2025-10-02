@@ -1,0 +1,185 @@
+
+.card2 {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 276px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card2:hover{
+    border: 1px solid #d56239;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    font-size: 14px;
+    color: #646464;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.card-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+.progress-all{
+    display: flex;
+    align-items: start;
+    gap: 16px;
+}
+
+.progress-bar {
+    flex: 1;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    height: 10px;
+    width: 50%;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.3s ease;
+    border: #F37142 3.5px solid;
+    background-color: #ff895e;
+}
+
+.progress-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f36e2f;
+    margin-left: 5px;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+
+.box {
+    width: 270px;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    box-shadow: 0 5px 0 0 #DDDDDD;
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.box:hover {
+    background-color: #FAFAFA;
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* màu tối mờ */
+    z-index: 10000;
+}
+
+
+.add-course-modal {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    width: 600px;
+    transform: translate(-50%);
+
+    justify-content: center;
+    align-items: center;
+    z-index: 100001;
+
+}
+
+.add-course-modal.active {
+    display: flex;
+}
+
+.add-course-modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.add-course-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.add-course-modal-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.btn-del{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #d53c3c;
+    color: var(--light);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.btn-del:hover {
+    background-color: #c65050;
+}

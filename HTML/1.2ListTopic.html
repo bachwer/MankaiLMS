@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../CSS/ListTopic.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/a5e9eda380.js"></script>
+    <script src="../JS/checkDatahome.js"></script>
+
+</head>
+
+
+<header>
+    <div id="logoHome">
+        <img alt="Icon" src="../assets/Group 1.svg"/>
+
+    </div>
+
+
+    <div class="menu">
+        <div class="headerLogin2">
+
+            <span id="testPage">Thi thử mỗi ngày</span>
+
+            <span id="topicPage">Chủ đề</span>
+
+
+            <label>
+                <select class="study-select" onchange="handleSelect(this)">
+                    <option value="home">Học tập</option>
+                    <option value="search">Tra cứu</option>
+                </select>
+                <i class="fa-solid fa-angle-down"></i>
+            </label>
+        </div>
+        <div class="headerLogin3 " >
+            <div class="lang">
+                <img  alt="Icon" src="../assets/VN.svg" style="margin-right: 8px;"/>
+
+                <span>VI</span>
+                <div class="dropdown-menu">
+                    <button > <img  alt="Icon" src="../assets/VN.svg" style="width: 25px;"/> VietNam</button>
+                    <button ><div class="flag-wrapper"><img class="flag" alt="Icon" src="../assets/JP.png" ></div>Japanese</button>
+                </div>
+            </div>
+            <div class="containerAvatar">
+                <img class="Avatar imgLoadLc" alt="Icon" src="../assets/Avatar.svg"/>
+                <div class="popUpInformation">
+
+                    <div class="box1">
+                        <img class="Avatar imgLoadLc" alt="Icon" src="../assets/Avatar.svg"/>
+                        <div >
+                            <h3 id="nameInfo">Quách Văn Sơn Bách</h3>
+                            <span id="emailInfo">quachbach38@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div id="informationUser" class="box2">
+                        <span>Thông Tin</span>
+                    </div>
+                    <div id="signOut" class="box2">
+                        <span class="textSignOut">Đăng xuất</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<body>
+
+<nav>
+
+    <img alt="Icon" src="../assets/Chevron%20Container.svg"/>
+    <a>Trang chủ</a>/
+    <a>Khoá học online</a>/
+    <a class="active">Tiếng nhật theo chủ đề</a>
+
+</nav>
+<main>
+    <h1>Tiếng Nhật theo chủ đề</h1>
+
+    <section class="sectionMain" id="tableBox">
+
+    </section>
+
+
+
+
+
+</main>
+<div class="spinner-container" id="spinnerContainer">
+    <div class="spinner"></div>
+</div>
+
+<footer>
+    <div class="contact">
+        <div>
+            <h2>Khởi động hành trình của bạn</h2>
+            <p>Hãy bước vào hành trình mới để khám phá tiềm năng và chinh phục những<br> mục tiêu của bạn ngay hôm nay.
+            </p>
+        </div>
+
+        <div class="btn">
+            <button class="btn1">Liên Hệ</button>
+            <button class="btn2"><span>Nhận tư vấn</span></button>
+
+        </div>
+
+    </div>
+
+    <div class="textFooter1">
+        <img alt="Icon" src="../assets/Logo.svg"/>
+        <p>|</p>
+        <span>HỌC VIỆN ĐÀO TẠO VÀ PHÁT TRIỂN TIẾNG NHẬT THỰC CHIẾN</span>
+    </div>
+
+
+    <section class="sectionFooter">
+        <div class="textFooter2">
+            <span>Thông tin liên hệ</span>
+            <div class="text1">
+
+                <div>
+                    <img alt="icon" src="../assets/vuesax/location.svg"> <strong> Địa Chỉ: </strong>
+                </div>
+
+                <div>
+                    Tòa nhà Sông Đà, Đường Phạm Hùng,<br> Mỹ Đình, Nam Từ Liêm, Hà Nội
+                </div>
+
+            </div>
+
+            <div class="text1">
+
+                <div>
+                    <img alt="icon" src="../assets/vuesax/call.svg"><strong> Hotline: </strong>
+                </div>
+                <div>
+                    0835 662 538
+                </div>
+            </div>
+
+            <div class="text1">
+
+                <div><img alt="icon" src="../assets/vuesax/Vector.svg"><strong> Email: </strong>
+                </div>
+                <div>
+                    support@mankai.edu.vn
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="textFooter3">
+
+
+            <table>
+                <tr>
+                    <th >Liên Kết Nhanh</th>
+                </tr>
+
+                <tr>
+                    <td>Giới thiệu</td>
+                    <td>tokutei</td>
+                </tr>
+
+                <tr>
+                    <td>JLPT</td>
+                    <td>Đào tạo doanh nghiệp</td>
+                </tr>
+                <tr>
+                    <td>Kaiwa</td>
+                    <td>Bảng và Mankai</td>
+                </tr>
+                <tr>
+                    <td>Sơ cấp</td>
+                    <td>Tin Tức</td>
+                </tr>
+                <tr>
+                    <td>ID Talk</td>
+                    <td>Liên hệ</td>
+                </tr>
+            </table>
+            
+
+        </div>
+
+        <div class="textFooter4">
+            <span>Theo dõi chúng tôi tại</span>
+
+            <div class="text1">
+                <img src="../assets/vuesax/v1.svg" alt="icon">
+                <img src="../assets/vuesax/v2.svg" alt="icon">
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <div class="imgFooter">
+        <img src="../assets/vuesax/imgFooter.svg" alt="img">
+    </div>
+
+
+    <div class="copyRight">
+        <div class="text">
+            &copy;
+            <span>Copyright 2024 By Mankai Academy - All rights reserved</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="../JS/LoadDataFireBase.js"></script>
+<script src="../JS/JSMenu.js"></script>
+
+<script src="../JS/ListTopic.js"></script>
+
+</body>
+</html>

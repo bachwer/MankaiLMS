@@ -1,0 +1,660 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FS PF BeauSans Pro', sans-serif;
+}
+
+body {
+    background-color: #f5fbff;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    padding: 14px 120px;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.headerLogin2 {
+    display: flex;
+    gap: 24px;
+    color: #1D2939;
+    font-weight: 600;
+}
+
+.headerLogin2 label {
+    color: #F37142;
+}
+
+.headerLogin2 select {
+    border: none;
+    color: #F37142;
+    font-weight: 600;
+    appearance: none;
+}
+
+.headerLogin3 {
+    display: flex;
+    align-items: center;
+}
+
+.headerLogin3 span {
+    margin-right: 16px;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    gap: 8px;
+    color: #848484;
+    padding: 16px 120px 0;
+}
+
+.active {
+    color: #3D3D3D;
+}
+
+/* Main content styles */
+main {
+    padding: 24px 120px 0;
+}
+
+main h1 {
+    color: #3D3D3D;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.sectionMain {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 100%;
+}
+
+/* Card styles */
+/* Card Container */
+.course-card {
+    height: 308px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+.boxCourse-card{
+    width: 30%;
+}
+
+/* Course Image Container */
+.course-image-container {
+    padding: 16px;
+    height: 184px;
+    width: 100%;
+    overflow: hidden;
+    /* ngăn phần tử con tràn ra ngoài */
+}
+
+/* Course Image Background */
+.course-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/background-card.svg");
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Grid pattern for background */
+.grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: linear-gradient(to right,
+            #fef8ee 1px,
+            transparent 1px),
+        linear-gradient(to bottom, #fef8ee 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.9;
+    /* đặt độ trong suốt cho một phần tử */
+}
+
+/* Course image placeholder */
+.course-thumbnail {
+    position: absolute;
+    top: -17px;
+    left: 6px;
+    width: 194px;
+    height: 247px;
+    background: #000;
+    z-index: 1;
+    /*  kiểm soát thứ tự xếp chồng */
+}
+
+/* Course title on image */
+.course-overlay-title {
+    position: absolute;
+    top: 13px;
+    left: 138px;
+    width: 180px;
+    color: white;
+    z-index: 2;
+}
+
+.course-overlay-title .label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.course-overlay-title .title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+/* Course Info */
+.course-info {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.course-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.course-category {
+    color: #676767;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.course-title {
+    color: #3d3d3d;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.course-stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.course-lessons {
+    color: #676767;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* Button */
+.button-container {
+    height: 50px;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.button {
+    position: relative;
+    background: #f37142;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 16px;
+    border: 1px solid #dd673c;
+    box-shadow: 0 2px 0 #ad502f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 94px;
+    left: 7.6px;
+    top: -25px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    width: 10.9px;
+    height: 110px;
+    left: 9.4px;
+    top: 5px;
+    transform: rotate(-27deg);
+    transform-origin: top left;
+    mix-blend-mode: soft-light;
+    background: #fbd3c4;
+    pointer-events: none;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.icon::before {
+    content: "";
+    width: 13.3px;
+    height: 14.2px;
+    position: absolute;
+    left: 3.3px;
+    top: 2.9px;
+    outline-offset: -0.75px;
+}
+
+.button:hover {
+    background: #ff8152;
+}
+
+/* Box text styles */
+.boxText {
+    width: 100%;
+    height: 80px;
+    background-color: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 8px;
+    padding: 12px;
+    font-size: 14px;
+    color: #676767;
+}
+
+/* Contact section */
+.contact1 {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    height: 142px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    padding: 32px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Button styles */
+.btn {
+    display: flex;
+    gap: 16px;
+}
+
+.btn1 {
+    width: 97px;
+    height: 50px;
+    border: 1px solid #F58D68;
+    border-radius: 16px;
+    background-color: #FFFF;
+    box-shadow: 0 3px 0 0 #F58D68;
+    color: #F58D68;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn1:hover {
+    background-color: #FAFAFA;
+}
+
+.btn2 {
+    cursor: pointer;
+    width: 163px;
+    height: 50px;
+    border: 2px solid #DD673C;
+    border-radius: 16px;
+    box-shadow: 0 4px 0 0 #AD502F;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #F37142;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.btn2:hover {
+    border: 2px solid #d56239;
+}
+
+.btn2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-115deg,
+            #F37142 60%,
+            #f8854f 60%,
+            #f8854f 62%,
+            #F37142 62%,
+            #F37142 65%,
+            #f8854f 65%,
+            #f8854f 70%,
+            #F37142 70%,
+            #F37142 73%,
+            #f8854f 73%,
+            #f8854f 75%,
+            #F37142 75%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.btn2 span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 80px;
+    position: relative;
+    width: 100%;
+    height: 480px;
+    background: linear-gradient(25deg, rgb(255, 66, 0) 28%, rgb(237, 117, 61) 100%);
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/backgroundFooter.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+footer * {
+    position: relative;
+    z-index: 1;
+}
+
+.sectionFooter {
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+}
+
+.textFooter1 {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 120px;
+    margin-top: 64px;
+}
+
+.textFooter1 p {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.textFooter2 {
+    color: white;
+    padding-left: 120px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 16px;
+}
+
+.textFooter2 strong {
+    font-weight: 700;
+}
+
+.text1 {
+    display: flex;
+    gap: 5px;
+}
+
+.textFooter3 {
+    color: white;
+    font-weight: 300;
+}
+
+.textFooter3 table td {
+    padding-right: 30px;
+    padding-bottom: 4px;
+}
+
+.textFooter3 table tr th {
+    padding-bottom: 16px;
+    font-weight: normal;
+}
+
+.textFooter4 {
+    color: white;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.copyRight {
+    bottom: 0;
+    position: absolute;
+    height: 34px;
+    width: 100%;
+    background-color: #F5B64A;
+    color: white;
+    align-items: center;
+    display: flex;
+}
+
+.text {
+    margin-left: 120px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.imgFooter {
+    position: absolute;
+    bottom: -5px;
+    right: -20px;
+}
+
+#logoHome{
+    cursor: pointer;
+}
+.popUpInformation{
+    right: 10%;
+    width: 300px;
+    height: auto;
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DDDDDD;
+    box-shadow: 1px 2px 1px 1px  #888481;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    opacity: 0;
+}
+.popUpInformation .box1{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.dropdown-menu{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 35px;
+    right: 0;
+
+}
+
+.dropdown-menu button{
+    border: 1px solid #DDDDDD;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    background-color: #FFF;
+    cursor: pointer;
+
+}
+.dropdown-menu button:hover{
+    background-color: #e8e1d0;
+}
+
+.lang:hover .dropdown-menu{
+    display: flex;
+
+}
+
+.lang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.flag-wrapper {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Avatar{
+    cursor: pointer;
+    width: 40px;
+}
+
+
+.containerAvatar{
+    position: relative;
+}
+
+
+
+.containerAvatar:hover .popUpInformation {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.box2 .textSignOut{
+    color: #d53c3c;
+
+
+}
+.box2{
+    padding: 5px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+.box2:hover{
+    background-color: #f3f1ee;
+
+}
+
+
+.pagination {
+    display: none;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.pagination button {
+    width: 40px;
+    height: 40px;
+    font-weight: 555;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #0D6EFD;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.pagination button:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.pagination button:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#btnPages button {
+    border-radius: 0;
+}
+
+.pagination button.btn-active {
+    background: #007BFF;
+    color: #fff;
+    border-color: #007BFF;
+}
+
+.pagination button:hover {
+    background: #e7ecf1;
+    border: none;
+}
+
+.pagination button:disabled {
+    color: #999 !important;
+    cursor: not-allowed;
+}

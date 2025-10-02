@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+* {
+    font-family: 'FS PF BeauSans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.your-element {
+    font-family: 'Motherland', cursive;
+}
+
+
+section {
+    display: flex;
+    padding: 20px;
+    gap: 77px;
+}
+
+.imgLogin {
+    width: 60%;
+    height: 95vh;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background-image: url(../assets/ImgLogin/background.svg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.imgLogin2 {
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    clip-path: inset(2px 0 0 0);
+}
+.Logo{
+    position: absolute;
+    width: 20%;
+
+    top: 40px;
+
+}
+
+.text {
+    margin-top: auto;
+    top: 100px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: inline-flex;
+    width: 60%;
+    height: 20%;
+}
+
+.text1 {
+    margin-top: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: #F3A41D;
+    font-size: clamp(2rem, 2vw, 3rem);
+    font-weight: 400;
+    line-height: 200%;
+    font-family: "Dancing Script", cursive;
+}
+
+.text2 {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: #F37142;
+
+    font-family: "FS PF BeauSans Pro", serif;
+    font-weight: 700;
+    line-height: 100%;
+    word-wrap: break-word
+}
+
+
+
+
+.fromLogin {
+    margin-top: calc(126px - 40px);
+    width: 40%;
+    padding: 24px;
+
+}
+
+.fromLogin .header {
+    font-weight: bold;
+    font-size: 32px;
+    color: #3D3D3D;
+}
+
+.fromLogin .header2 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #676767;
+}
+
+.formLogin1 {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.formLogin2 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+}
+.eye{
+    width: 5%;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-10%);
+    cursor: pointer;
+}
+
+#ForgetPass {
+    color: #0BA5EC;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+
+.formLogin1 label {
+    font-size: 14px;
+    color: #676767;
+
+}
+
+.formLogin1 input {
+    border: 1px solid #B5B5B5;
+    height: clamp(5vh, 1vh, 5vh);
+
+    border-radius: 8px;
+    padding-left: 14px;
+    box-sizing: border-box;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.formLogin3 button {
+    border: 1px solid #AD502F;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    height: clamp(5vh, 1vh, 5vh);
+    border-radius: 16px;
+    background-color: #F37142;
+    color: #FFFFFF;
+    box-shadow: 0 6px 0 #AD502F;
+    position: relative;
+    /* Cần để tạo stacking context */
+    overflow: hidden;
+    z-index: 0;
+    /* Quan trọng: lớp nền */
+    cursor: pointer;
+}
+
+
+
+.formLogin3 button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-115deg,
+            #F37142 60%,
+            #f8854f 60%,
+            #f8854f 62%,
+            #F37142 62%,
+
+            #F37142 65%,
+            #f8854f 65%,
+            #f8854f 70%,
+            #F37142 70%,
+
+            #F37142 73%,
+            #f8854f 73%,
+            #f8854f 75%,
+            #F37142 75%);
+    pointer-events: none;
+    z-index: 0;
+    /* Đặt lớp dưới */
+}
+
+
+
+.formLogin3 button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 9px 0 #AD502F;
+}
+
+
+
+.formLogin3 button span {
+    position: relative;
+    z-index: 1;
+}
+
+
+.forgetPas {
+    display: none;
+    margin-top: 20px;
+    color: #0BA5EC;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    justify-content: center;
+}
+.login-status-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background-color: #f3a642;
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login-status-item.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.login-status-item.hide {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login-status-icon {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.login-status-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.login-status-text p {
+    margin: 0;
+    font-size: 14px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./CSS/login.css" />
+  </head>
+  <body>
+    <section class="ImgLogin">
+      <div class="imgLogin">
+        <img src="./assets/ImgLogin/IMG_0959%201.svg" alt="TLogo" class="imgLogin2" />
+        <div class="text">
+          <div class="text1">Mankai Academy</div>
+          <div class="text2">
+            Kaiwa siêu tốc, <br />
+            phản xạ thần tốc
+          </div>
+        </div>
+        <img src="/assets/ImgLogin/Group 1.svg" alt="Logo" class="Logo" />
+
+      </div>
+
+      <div class="fromLogin">
+        <span id="headerLogin" class="header">Đăng Nhập</span><br />
+        <span id="headerLogin2" class="header2">Sử dụng tài khoản được cấp để đăng nhập vào hệ thống</span>
+
+        <div class="formLogin1">
+          <div class="formLogin2" id="emailShow">
+            <label for="email">Email hoặc tên đăng nhập </label
+            ><input type="text" id="email" placeholder="Nhập tên đăng nhập" />
+          </div>
+
+          <div class="formLogin2" id="passwordShow">
+            <label for="password">Mật khẩu </label
+            ><input type="password" id="password" placeholder="Nhập Mật khẩu"  />
+            <img id="showPass" src="./assets/vuesax/linear/eye.svg" alt="eye" class="eye" />
+          </div>
+          <a id="ForgetPass" class="btnForgetPas">Quên Mật Khẩu</a>
+
+          <div class="formLogin3">
+            <div class="checkbox">
+              <input type="checkbox" id="remember" name="remember" /><label
+                for="remember"> Lưu thông tin đăng nhập</label
+              >
+            </div>
+                            <button id="login"><span>Đăng Nhập</span></button>
+            <a id="ForgetPass1" class="forgetPas">Quên Mật Khẩu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="popUpStatus" class="login-status-item login-status-waiting">
+
+    </div>
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="./JS/LoadDataFireBase.js"></script>
+    <script src="./JS/login.js"></script>
+  </body>
+</html>

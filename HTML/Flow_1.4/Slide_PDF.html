@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  2 <title>Title</title>
+  <link rel="stylesheet" href="../../CSS/flow1.4..css">
+  <link rel="stylesheet" href="../../CSS/Slide_PDF.css">
+</head>
+
+<header>
+
+  <div class="boxHeader">
+    <img src="../../assets/arrow-left.svg" alt="ion">
+    <h2>Tên bài học</h2>
+  </div>
+
+  <div class="boxHeader">
+    <img src="../../assets/Process.svg" alt="ion">
+    <h2>Tiến Trình</h2>
+  </div>
+</header>
+
+<body>
+
+  <main>
+    <section class="menu">
+      <div class="menuTitle">
+        <h3>Danh sách bài</h3>
+        <span>4 videos •</span>
+        <span> 50 phút •</span>
+        <span>1 bài Test</span>
+      </div>
+
+      <div id="video" class="video">
+        <div id="classVideo" class="boxMain">
+          <img src="../../assets/play-circle.svg" alt="icon">
+          <span>Video</span>
+          <span id="progressVideo">0%</span>
+        </div>
+      </div>
+
+      <div id="flashCard">
+        <div class="boxMain">
+          <img src="../../assets/flashCard.svg" alt="icon">
+          <span>Flash card</span>
+          <span id="progressFlash">0%</span>
+        </div>
+      </div>
+
+      <div id="test">
+        <div class="boxMain">
+          <img src="../../assets/task-square.svg" alt="icon">
+          <span>Bài kiểm tra</span>
+          <span id="progressTest">0%</span>
+        </div>
+      </div>
+
+      <div id="Sile">
+        <div class="menuVideo">
+          <img src="../../assets/iconPDF.svg" alt="icon">
+          <span>Slide / PDF</span>
+          <span id="progressPDF">0%</span>
+
+        </div>
+      </div>
+
+      <div id="book">
+        <div class="boxMain">
+          <img src="../../assets/book.svg" alt="icon">
+          <span>Text</span>
+          <span id="progressText">0%</span>
+        </div>
+      </div>
+
+      <div id="audio">
+        <div class="boxMain">
+          <img src="../../assets/headphone.svg" alt="icon">
+          <span>Audio / Script</span>
+          <span id="progressAudio">0%</span>
+
+        </div>
+      </div>
+    </section>
+
+
+    <div class="spinner-container" id="spinnerContainer">
+      <div class="spinner"></div>
+    </div>
+
+
+
+    <section class="container">
+
+      <div class="container2">
+        <div class="container1">
+          <div class="boxIconContainer">
+            <img src="../../assets/iconPDF.svg" alt="icon">
+          </div>
+
+          <div class="container12">
+            <h3>Tên bài học</h3>
+            <span>Bài giảng chuẩn hoá bởi chuyên gia hàng đầu</span>
+          </div>
+        </div>
+
+        <button class="btn1">Bài tiếp Theo</button>
+      </div>
+
+      <div class="containerMain">
+
+        <div id="loadPDF">
+
+        </div>
+
+        <div class="tab-container">
+          <img id="toggle-tab" src="../../assets/chevrons-down.svg" alt="button">
+          <div class="tab-header">
+            <button class="tab-btn active" data-tab="description">Mô tả</button>
+            <button class="tab-btn" data-tab="document">Tài liệu</button>
+            <button class="tab-btn" data-tab="discussion">Thảo luận</button>
+          </div>
+
+          <div class="tab-content" data-content="description" id="description" style="display: block;">
+            <!-- RENDER PHẦN MÔ TẢ-->
+          </div>
+          <div class="tab-content" data-content="document" style="display: none;">
+            <div class="file-grid" id="tab-content-document">
+              <!-- RENDER FILE CARD -->
+            </div>
+          </div>
+          <div class="tab-content" data-content="discussion" style="display: none;">
+            <div class="discussion-section">
+              <div class="comment-input">
+                <img src="../../assets/avatar.svg" alt="avatar" class="avatar">
+                <input type="text" placeholder="Bạn muốn thảo luận vấn đề gì?" />
+                <button class="send-btn">
+                  <img src="../../assets/send.svg" alt="send">
+                </button>
+              </div>
+
+              <p class="comment-count">0 bình luận</p>
+
+              <div class="comment">
+                <img src="../../assets/avatar.svg" alt="avatar" class="avatar">
+                <div class="comment-body">
+                  <p class="comment-author">Nguyễn Thị Minh Thùy</p>
+                  <p class="comment-text">
+                    Ornare eu elementum felis porttitor nunc tortor. Ornare neque accumsan metus nulla ultricies
+                    maecenas
+                    rhoncus ultrices cras.
+                  </p>
+                  <p class="comment-meta">5:30 3/3/2025 · <span class="reply">Phản hồi</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="../../JS/checkData.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="../../JS/LoadDataFireBase.js"></script>
+
+  <script src="../../JS/All_Obj_Flow1_4.js"></script>
+
+  <script src="../../JS/convertPage.js"></script>
+
+
+
+  <script src="../../JS/checkProgressLesson.js"></script>
+  <script>
+    let progressInterval1 = null;
+    if(progressLesson.pdf < 99){
+      progressPDF(0)
+    }
+
+  </script>
+
+
+  <script src="../../JS/Slide_PDF.js"></script>
+
+</body>
+
+</html>

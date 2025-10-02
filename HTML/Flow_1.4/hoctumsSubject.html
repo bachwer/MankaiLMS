@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../CSS/flow1.4..css">
+    <link rel="stylesheet" href="../../CSS/hoctumsSubject.css">
+</head>
+
+<header>
+
+    <div class="boxHeader">
+        <img src="../../assets/arrowLeft.svg">
+        <h2>Tên bài học</h2>
+    </div>
+
+    <div class="boxHeader">
+        <img src="../../assets/progress.svg" alt="ion">
+        <h2>Tiến Trình</h2>
+    </div>
+</header>
+
+<body>
+
+    <main>
+        <section class="menu">
+            <div class="menuTitle">
+                <h3>Danh sách bài</h3>
+                <span>4 videos •</span>
+                <span> 50 phút •</span>
+                <span>1 bài Test</span>
+            </div>
+
+            <div id="video" class="video">
+                <div id="classVideo" class="boxMain">
+                    <img src="../../assets/play-circle.svg" alt="icon">
+                    <span>Video</span>
+                    <span id="progressVideo">0%</span>
+                </div>
+            </div>
+
+            <div id="flashCard">
+                <div class="menuVideo">
+                    <img src="../../assets/flashCard.svg" alt="icon">
+                    <span>Flash card</span>
+                    <span id="progressFlash">0%</span>
+                </div>
+            </div>
+
+            <div id="test">
+                <div class="boxMain">
+                    <img src="../../assets/task-square.svg" alt="icon">
+                    <span>Bài kiểm tra</span>
+                    <span id="progressTest">0%</span>
+                </div>
+            </div>
+
+            <div id="Sile">
+                <div class="boxMain">
+                    <img src="../../assets/iconPDF.svg" alt="icon">
+                    <span>Slide / PDF</span>
+                    <span id="progressPDF">0%</span>
+
+                </div>
+            </div>
+
+            <div id="book">
+                <div class="boxMain">
+                    <img src="../../assets/book.svg" alt="icon">
+                    <span>Text</span>
+                    <span id="progressText">0%</span>
+                </div>
+            </div>
+
+            <div id="audio">
+                <div class="boxMain">
+                    <img src="../../assets/headphone.svg" alt="icon">
+                    <span>Audio / Script</span>
+                    <span id="progressAudio">0%</span>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+
+            <div class="container2">
+                <div class="container1">
+                    <div class="boxIconContainer">
+                        <img src="../../assets/iconTextJapan.svg">
+                    </div>
+                    <div class="container12">
+                        <h3>Tên bài học</h3>
+                        <span>Lật thẻ, ôn bài – vừa vui vừa hiệu quả.</span>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button class="btn2">
+                        Bài tiếp Theo
+                        <img src="../../assets/arrow-right.svg">
+                    </button>
+                    <button class="btn1">
+                        Bài tiếp Theo
+                        <img src="../../assets/arrow-up-right.svg">
+                    </button>
+                </div>
+            </div>
+
+            <div class="containerMain">
+                <!-- <div class="card-container"> -->
+                <div class="time-test">
+                    <p class="text-time-test">Thời gian kiểm tra</p>
+                    <button class="time" id="time">00:00 giây</button>
+                </div>
+                <div class="power" id="power">
+                    <img src="../../assets/power.svg">
+                </div>
+                <div class="card-subject">
+                    <!-- <div class="title-subject">
+                    <p >こんにちは</p>
+                   </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="spinner-container" id="spinnerContainer">
+        <div class="spinner"></div>
+    </div>
+
+    <section>
+        <div id="overlay" class="overlay"></div>
+        <div id="popUp" class="popUp">
+            <!-- <div class="boxDetail-header"> -->
+            <div class="flex">
+                <img src="../../assets/medal.svg">
+                <div class="text-complete">Hoàn thành Trò Chơi !</div>
+                <div class="point-popUp">
+                    <div class="point-expre point">
+                        <div class="point-text">Điểm KN</div>
+                        <div class="point-number-kn pnt"><img src="../../assets/Object 1.svg"><span id="point">10</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-point-popUp">
+                <button class="redo">Làm lại</button>
+                <button class="study" id="study" style="position: relative;"><img
+                        src="../../assets/Frame 1000007256.svg" style="position: absolute;">Học tiếp</button>
+            </div>
+            <!-- </div> -->
+        </div>
+    </section>
+
+
+    <!-- <script>let cardSubject = document.querySelector(".card-subject");
+        const popUp = document.getElementById("popUp");
+        const overlay = document.getElementById("overlay");
+
+        const cardsData = [
+            { text: "ちこれには", id: 1 },
+            { text: "ちこれには", id: 1 },
+            { text: "こにちはれ", id: 2 },
+            { text: "こにちはれ", id: 2 },
+            { text: "これにちは", id: 3 },
+            { text: "これにちは", id: 3 },
+            { text: "はにこれち", id: 4 },
+            { text: "はにこれち", id: 4 },
+            { text: "にこれちは", id: 5 },
+            { text: "にこれちは", id: 5 },
+            { text: "れこにちは", id: 6 },
+            { text: "れこにちは", id: 6 }
+        ];
+
+        function renderCards() {
+            cardSubject.innerHTML = "";
+            cardsData.forEach((card, index) => {
+                const cardEle = document.createElement("div");
+                cardEle.classList.add("cardElement");
+                cardEle.dataset.id = card.id;
+                cardEle.dataset.text = card.text;
+                cardEle.dataset.flipped = "false";
+                cardEle.innerHTML = `<div class="card-inner">
+        <div class="card-front"></div>
+        <div class="card-back">${card.text}</div>
+        </div>`;
+                cardSubject.appendChild(cardEle);
+            });
+        }
+
+        renderCards();
+
+        let firstCard = null;
+        let secondCard = null;
+        let mathCnt = 0;
+
+        cardSubject.addEventListener("click", function (e) {
+            const clicked = e.target.closest(".cardElement");
+            if (!clicked || clicked.dataset.flipped === "true") return;
+
+            clicked.dataset.flipped = "true";
+            clicked.classList.add("flipped");
+
+            if (!firstCard) {
+                firstCard = clicked;
+                firstCard.classList.add("blue");
+            } else if (!secondCard && clicked !== firstCard) {
+                secondCard = clicked;
+                secondCard.classList.add("blue");
+
+                const isMatch = firstCard.dataset.id === secondCard.dataset.id;
+                setTimeout(() => {
+                    if (isMatch) {
+                        firstCard.classList.add("green");
+                        secondCard.classList.add("green");
+                        mathCnt += 2;
+                        resetSelected();
+                    } else {
+                        firstCard.classList.add("red");
+                        secondCard.classList.add("red");
+                        mathCnt += 2;
+                        resetSelected();
+                    }
+                }, 2500)
+            }
+        });
+
+        function resetSelected() {
+            firstCard = null;
+            secondCard = null;
+        }
+
+
+        function countdown(des) {
+            const timeBtn = document.getElementById("time");
+
+            if (des < 0) {
+                overlay.style.display = "block";
+                popUp.style.display = "block";
+                return;
+            }
+
+            const minutes = Math.floor(des / 60).toString().padStart(2, "0");
+            const seconds = (des % 60).toString().padStart(2, "0");
+            timeBtn.textContent = `${minutes}:${seconds} giây`;
+
+            setTimeout(() => countdown(des - 1), 500);
+        }
+
+        countdown(90);
+        overlay.addEventListener("click", function (e) {
+            if (e.target === overlay) {
+                overlay.style.display = "none";
+                popUp.style.display = "none";
+            }
+        });
+
+        document.querySelector(".redo").addEventListener("click", () => {
+            overlay.style.display = "none";
+            popUp.style.display = "none";
+            mathCnt = 0;
+            renderCards();
+            firstCard = null;
+            secondCard = null;
+            countdown(3)
+        });
+
+        document.getElementById("study").addEventListener("click", () => {
+            overlay.style.display = "none";
+            popUp.style.display = "none";
+            window.location.href = "../../HTML/Flow_1.4/checkVocaNew.html";
+        });
+
+        document.getElementById("power").addEventListener("click", () => {
+            window.location.href = "../../HTML/Flow_1.4/flashCard.html";
+        });
+
+    </script> -->
+
+    <script src="../../JS/checkData.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="../../JS/LoadDataFireBase.js"></script>
+
+    <script src="../../JS/convertPage.js"></script>
+
+    <script src="../../JS/All_Obj_Flow1_4.js"></script>
+
+
+
+    <script src="../../JS/checkProgressLesson.js"></script>
+    <script src="../../JS/hoctumsSubject.js"></script>
+    <script src="../../JS/UpdatePoint.js"></script>
+
+</body>
+
+</html>

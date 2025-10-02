@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Title</title>
+  <link rel="stylesheet" href="../../CSS/flow1.4..css" />
+  <link rel="stylesheet" href="../../CSS/flashCard.css" />
+</head>
+
+<header>
+  <div class="boxHeader">
+    <img src="../../assets/arrowLeft.svg" />
+    <h2>Tên bài học</h2>
+  </div>
+
+  <div class="boxHeader">
+    <img src="../../assets/progress.svg" alt="ion" />
+    <h2>Tiến Trình</h2>
+  </div>
+</header>
+
+<body>
+  <main>
+    <section class="menu">
+      <div class="menuTitle">
+        <h3>Danh sách bài</h3>
+        <span>4 videos •</span>
+        <span> 50 phút •</span>
+        <span>1 bài Test</span>
+      </div>
+
+      <div id="video" class="video">
+        <div id="classVideo" class="boxMain">
+          <img src="../../assets/play-circle.svg" alt="icon">
+          <span>Video</span>
+          <span id="progressVideo">0%</span>
+        </div>
+      </div>
+
+      <div id="flashCard">
+        <div class="menuVideo">
+          <img src="../../assets/flashCard.svg" alt="icon">
+          <span>Flash card</span>
+          <span id="progressFlash">0%</span>
+        </div>
+      </div>
+
+      <div id="test">
+        <div class="boxMain">
+          <img src="../../assets/task-square.svg" alt="icon">
+          <span>Bài kiểm tra</span>
+          <span id="progressTest">0%</span>
+        </div>
+      </div>
+
+      <div id="Sile">
+        <div class="boxMain">
+          <img src="../../assets/iconPDF.svg" alt="icon">
+          <span>Slide / PDF</span>
+          <span id="progressPDF">0%</span>
+
+        </div>
+      </div>
+
+      <div id="book">
+        <div class="boxMain">
+          <img src="../../assets/book.svg" alt="icon">
+          <span>Text</span>
+          <span id="progressText">0%</span>
+        </div>
+      </div>
+
+      <div id="audio">
+        <div class="boxMain">
+          <img src="../../assets/headphone.svg" alt="icon">
+          <span>Audio / Script</span>
+          <span id="progressAudio">0%</span>
+
+        </div>
+      </div>
+    </section>
+    <div class="spinner-container" id="spinnerContainer">
+      <div class="spinner"></div>
+    </div>
+
+
+    <section class="container">
+      <div class="container2">
+        <div class="container1">
+          <div class="boxIconContainer">
+            <img src="../../assets/iconTextJapan.svg" />
+          </div>
+          <div class="container12">
+            <h3>Tên bài học</h3>
+            <span>Bài giảng chuẩn hoá bởi chuyên gia hàng đầu</span>
+          </div>
+        </div>
+        <button class="btn1" id="nextLesson">Bài tiếp Theo</button>
+      </div>
+
+      <div class="background-containerMain">
+        <div class="containerMain">
+          <!-- <div class="card-container"> -->
+          <div class="card">
+            <div class="card-content">
+              <p id="japanText" class="japan-text">私は</p>
+              <!-- <div class="btn-audio"> -->
+              <img id="volume" class="volume" src="../../assets/volume.svg" />
+              <!-- </div> -->
+            </div>
+            <div class="card-footer">
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+              <div class="chevron-curr">
+                <div class="next chevron">
+                  <img src="../../assets/chevron.svg" />
+                </div>
+                <span class="card-number">1/10</span>
+                <div class="prev-button chevron">
+                  <img src="../../assets/chevron.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <div class="game-pratice">
+            <p class="text-game-pra">Trò chơi ôn tập</p>
+            <div class="content-pra">
+              <div class="card-pra" id="study-voca-new">
+                <img src="../../assets/Frame 1000007360.svg" />
+                <p class="text-game">Học từ mới</p>
+              </div>
+              <div class="card-pra" id="cardMatch">
+                <img src="../../assets/Frame 1000007355.svg" />
+                <p class="text-game">Trò chơi ghép thẻ</p>
+              </div>
+              <div class="card-pra" id="checkNewWord" >
+                <img src="../../assets/task.svg" />
+                <p class="text-game">Kiểm tra từ mới</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="../../JS/checkData.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="../../JS/LoadDataFireBase.js"></script>
+  <script src="../../JS/convertPage.js"></script>
+
+
+  <script src="../../JS/All_Obj_Flow1_4.js"></script>
+  <script src="../../JS/checkProgressLesson.js"></script>
+
+  <script>
+
+  </script>
+
+
+  <script src="../../JS/flashCard.js"></script>
+
+</body>
+
+</html>

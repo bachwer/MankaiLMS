@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "@firebase/analytics": "^0.10.2",
+    "@firebase/app": "^0.9.3",
+    "cloudinary": "^2.6.0",
+    "firebase": "^9.23.0",
+    "lucide-react": "^0.509.0",
+    "react": "^19.1.0"
+  }
+}
